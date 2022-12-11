@@ -20,7 +20,51 @@
 <script>
   "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+  // es5
+  function ProductES5(name, price) {
+    this.name = name;
+    this.price = price;
+  }
+
+  ProductES5.prototype.make25Discount = function () {
+    this.price = (this.price / 100) * 75;
+  };
+
+  const product1 = new ProductES5('Хурма', 100);
+  const product2 = new ProductES5('Киви', 50)
+
+
+  console.log(`Название: ${product1.name}, цена: ${product1.price} руб.`);
+  product1.make25Discount();
+  console.log(`Название: ${product1.name}, цена со скидкой: ${product1.price} руб.`);
+
+  console.log(`Название: ${product2.name}, цена: ${product2.price} руб.`);
+  product2.make25Discount();
+  console.log(`Название: ${product2.name}, цена со скидкой: ${product2.price} руб.`);
+
+
+  // es6
+  class ProductES6 {
+    constructor(name, price) {
+      this.name = name;
+      this.price = price;
+    }
+
+    make25Discount() {
+      this.price = (this.price / 100) * 75;
+    }
+  }
+
+  const product3 = new ProductES6('Арбуз', 150);
+  const product4 = new ProductES6('Гранат', 75)
+
+  console.log(`Название: ${product3.name}, цена: ${product3.price} руб.`);
+  product3.make25Discount();
+  console.log(`Название: ${product3.name}, цена со скидкой: ${product3.price} руб.`);
+
+  console.log(`Название: ${product4.name}, цена: ${product4.price} руб.`);
+  product4.make25Discount();
+  console.log(`Название: ${product4.name}, цена со скидкой: ${product4.price} руб.`);
 </script>
 </body>
 </html>
